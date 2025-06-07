@@ -1,0 +1,35 @@
+
+# WHICH SUBREDDIT?
+subreddit: r/programming
+
+# HOW MANY TOP POSTS TO FETCH?
+limit: 20
+
+# LOCAL FOLDERS (no trailing spaces or CRLF!)
+data_folder: data
+report_folder: reports
+
+ # Path to the Jinja2 template used for the HTML report
+html_template: templates/top_posts_template.html
+
+# EMAIL SETTINGS (optional)
+email:
+
+  # Toggle sending on/off
+  enabled: true
+
+  # Supported: "gmail" (others could be added later)
+  provider: gmail
+
+  # Your Gmail address (the sender)
+  sender: wiriya.khongthawinwong@gmail.com
+
+   # List of recipients (could be colleagues, friends)
+  recipients:
+    - colleague1@example.com
+    - friend2@example.com
+
+   # Subject line is a Jinja2 template; {{limit}} and {{date}} get replaced.  
+  subject: "r/programming Top {{limit}} Posts for {{date}}"
+
+  

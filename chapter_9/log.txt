@@ -1,0 +1,6 @@
+2025-06-07 14:10:30 — User logged in
+2025-06-07 14:10:30 — Clicked settings
+2025-06-07 14:10:30 — Logged out
+2025-06-07 14:10:47 — User logged in
+2025-06-07 14:10:47 — Clicked settings
+2025-06-07 14:10:47 — Logged out

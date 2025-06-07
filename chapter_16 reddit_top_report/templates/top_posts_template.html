@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top {{ subreddit }} Posts for {{ date }}</title>
+  <style>
+    /* ────────────────────────────────────────────────────────────────── */
+    /* Basic Reset & Body Styling */
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+      line-height: 1.4;
+      color: #333;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    /* ────────────────────────────────────────────────────────────────── */
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #f4f4f4;
+      text-align: left;
+    }
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    /* ────────────────────────────────────────────────────────────────── */
+    /* Link Styling */
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Top {{ subreddit }} Posts for {{ date }}</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Title</th>
+        <th>Score</th>
+        <th>Comments</th>
+        <th>Author</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in posts %}
+      <tr>
+        <td>{{ row.rank }}</td>
+        <td>
+          <a href="{{ row.url }}" target="_blank">{{ row.title }}</a>
+        </td>
+        <td>{{ row.score }}</td>
+        <td>{{ row.comments }}</td>
+        <td>{{ row.author }}</td>
+        <td>{{ row.created_utc_str }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
